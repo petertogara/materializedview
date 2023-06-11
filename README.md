@@ -2,13 +2,6 @@
 Spring Boot and PostgreSQL materialized view demo
 
 On PostgreSQL 
-- create a stored procedure (trigger)
-    `CREATE TRIGGER refresh_mat_view_after_po_insert
-        AFTER INSERT 
-        ON purchase_order
-        FOR EACH STATEMENT
-        EXECUTE PROCEDURE refresh_mat_view();`
-  
  - create a function that is called by the stored procedure and it in turn calls the materialized view
     `CREATE OR REPLACE FUNCTION refresh_mat_view()
     RETURNS TRIGGER LANGUAGE plpgsql
@@ -17,6 +10,14 @@ On PostgreSQL
     REFRESH MATERIALIZED VIEW CONCURRENTLY purchase_order_summary;
     RETURN NULL;
     END $$;`
+- create a stored procedure (trigger)
+    `CREATE TRIGGER refresh_mat_view_after_po_insert
+        AFTER INSERT 
+        ON purchase_order
+        FOR EACH STATEMENT
+        EXECUTE PROCEDURE refresh_mat_view();`
+  
+
     
  - create the materialized view 
      `CREATE MATERIALIZED VIEW purchase_order_summary
