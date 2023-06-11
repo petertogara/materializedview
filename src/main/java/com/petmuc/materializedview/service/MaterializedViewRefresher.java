@@ -1,6 +1,6 @@
 package com.petmuc.materializedview.service;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

@@ -1,6 +1,6 @@
 package com.petmuc.materializedview.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")

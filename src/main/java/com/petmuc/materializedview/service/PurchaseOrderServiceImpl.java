@@ -8,7 +8,7 @@ import com.petmuc.materializedview.repository.ProductRepository;
 import com.petmuc.materializedview.repository.PurchaseOrderRepository;
 import com.petmuc.materializedview.repository.PurchaseOrderSummaryRepository;
 import com.petmuc.materializedview.repository.UserRepository;
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
